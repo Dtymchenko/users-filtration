@@ -1,0 +1,33 @@
+.wrapper {
+    max-width: 1200px;
+}
+
+.body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 30px;
+}
+
+.img {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.text {
+    p {
+        margin-bottom: 20px;
+    }
+}

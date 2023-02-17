@@ -3,18 +3,19 @@ import styles from './ListUserItem.module.scss'
 import { Link } from "react-router-dom"
 import { IItem } from '../interface'
 import { useDispatch } from 'react-redux/es/exports';
-import { setFilteredItems } from '../redux/slices/mainSlice';
+import { setItemId } from '../redux/slices/mainSlice';
 
 interface ListUserItemProps {
-  item: IItem
+  item: IItem,
+  index: number
 }
 
-const ListUserItem = ({item}: ListUserItemProps) => {
+const ListUserItem = ({item, index}: ListUserItemProps) => {
 
   const dispatch = useDispatch()
 
   const onClickLink = () => {
-    dispatch(setFilteredItems(item.id))
+    dispatch(setItemId(index))
   }
 
 

@@ -7,13 +7,13 @@ import { IItem } from './../interface';
 
 const ListUsers = () => {
 
-  const items = useSelector((state:RootState) => state.main.items)
-  console.log(items)
+  const filteredItems = useSelector((state:RootState) => state.main.filteredItems)
+  
   return (
     <ul className={styles.items_list}>
-      {items.map((item: IItem) => {
+      {filteredItems?.map((item: IItem, index: number) => {
         return (
-          <ListUserItem key={item.id} item={item}/>
+          <ListUserItem key={item.id} index={index} item={item}/>
         )
       })}      
     </ul>

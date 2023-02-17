@@ -4,3 +4,8 @@
   padding: 30px;
   text-align: center;
 }
+
+.main_wrapper {
+  display: flex;
+  justify-content: center;
+}

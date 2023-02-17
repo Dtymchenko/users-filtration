@@ -1,5 +1,17 @@
 .wrapper {
     max-width: 1200px;
+    position: relative;
+    left: -1000%;
+    animation: appear 0.7s ease-in-out forwards;
+} 
+
+@keyframes appear {
+    0% {
+        left: -1000%;
+    }
+    100% {
+        left: 0%;
+    }
 }
 
 .body {

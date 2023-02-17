@@ -4,11 +4,15 @@ import { IItem } from "../../interface";
 interface initialStateInterface {
   items: IItem[],
   filteredItems: IItem[] | null,
+  itemId: number,
+  isLoading: boolean
 }
 
 const initialState: initialStateInterface = {
   items: [],
   filteredItems: [],
+  itemId: 0,
+  isLoading: true
 };
 
 export const mainSlice = createSlice({
@@ -17,14 +21,17 @@ export const mainSlice = createSlice({
   reducers: {
     setItems: (state, action) => {
       state.items = action.payload;
-      state.filteredItems = action?.payload[0];
+      state.filteredItems = action.payload;
     },
     setFilteredItems: (state, action) => {
-      console.log(action.payload)
-      state.filteredItems = state.items.filter(el => Number(el.id) === Number(action.payload)
-      );
+      state.filteredItems = action.payload
     },
-    
+    setItemId: (state, action) => {
+      state.itemId = action.payload
+    },
+    setIsLoading: (state, action) => {
+      state.isLoading = action.payload
+    }
   },
 });
 
@@ -32,6 +39,8 @@ export const mainSlice = createSlice({
 export const {
   setItems,
   setFilteredItems,
+  setItemId,
+  setIsLoading
 } = mainSlice.actions;
 
 export default mainSlice.reducer;
